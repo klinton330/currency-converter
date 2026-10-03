@@ -1,8 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+/* Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  }
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Layout */
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background: linear-gradient(135deg, #1e272e, #34495e, #2c3a47);
+}
+
+/* Main Converter Card */
+.currency-converter {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.currency-converter:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+h1 {
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 0;
+    margin-bottom: 20px;
+    color: #2980b9;
+    text-align: center;
+    border-top: 2px dashed #dfe6e9;
+    border-bottom: 2px dashed #dfe6e9;
+}
+
+/* Currency Illustration */
+.box {
+    width: 100%;
+    height: 170px;
+    background-image: url("./assets/currency.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #485460;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Inputs and Dropdowns */
+input,
+select {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    color: #2f3640;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease,
+                background-color 0.2s ease;
+}
+
+input:hover,
+select:hover {
+    border-color: #a5b1c2;
+}
+
+input:focus,
+select:focus {
+    border-color: #3498db;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+/* Remove default number input arrows where supported */
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Conversion Result */
+.result {
+    margin: 12px 0 20px;
+    padding: 18px 14px;
+    border: 2px dashed #74b9ff;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f5faff, #eaf4ff);
+}
+
+.result p {
+    margin: 8px 0;
+    color: #2471a3;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* Optional Convert Button */
+button {
+    width: 100%;
+    padding: 13px 16px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3498db, #2471a3);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+                background 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2980b9, #1b5f8a);
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 3px solid #74b9ff;
+    outline-offset: 3px;
+}
+.error{
+    color: red;
+}
+/* Copyright */
+.copyright {
+    margin-top: 24px;
+    text-align: center;
+    color: #8395a7;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.copyright span {
+    color: #3498db;
+    font-weight: 600;
+}
+.result-value{
+    color:#6666c9;
+    font-size: 36px;
+}
+/* Responsive Design */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+        align-items: center;
+    }
+
+    .currency-converter {
+        max-width: 100%;
+        padding: 22px 18px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 19px;
+    }
+
+    .box {
+        height: 140px;
+    }
+
+    input,
+    select {
+        font-size: 16px;
+    }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
